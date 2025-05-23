@@ -8,12 +8,14 @@ import { NivelDificuldade } from '../models/NivelDificuldade.model';
 import { NivelToxicidade } from '../models/NivelToxicidade.model';
 import { PortePlanta } from '../models/PortePlanta.model';
 import { ItemCarrinho } from '../models/itemcarrinho.model';
+import { environment } from '../../environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlantaService {
-  private baseUrl = 'http://localhost:8080/plantas';
+  private baseUrl = `${environment.apiUrl}/plantas`;
 
   constructor(private httpClient: HttpClient) {  }
 

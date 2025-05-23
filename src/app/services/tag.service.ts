@@ -3,12 +3,13 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Tag, TagUpdateAtiva } from '../models/tag.model';
 import { TipoCategoria } from '../models/tipoCategoria.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TagService {
-  private baseUrl = 'http://localhost:8080/tags';
+  private baseUrl = `${environment.apiUrl}/tags`;
 
   constructor(private httpClient: HttpClient) {  }
 

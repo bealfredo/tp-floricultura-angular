@@ -3,12 +3,13 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Admin } from '../models/admin.model';
 import { TipoAdmin } from '../models/tipoAdmin.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdminService {
-  private baseUrl = 'http://localhost:8080/admins';
+  private baseUrl = `${environment.apiUrl}/admins`;
 
   constructor(private httpClient: HttpClient) {  }
 

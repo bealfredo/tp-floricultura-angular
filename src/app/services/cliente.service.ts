@@ -4,12 +4,13 @@ import { Observable, tap } from 'rxjs';
 import { Cliente } from '../models/cliente.model';
 import { AuthService } from './auth.service';
 import { ItemCarrinho } from '../models/itemcarrinho.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClienteService {
-  private baseUrl = 'http://localhost:8080/clientes';
+  private baseUrl = `${environment.apiUrl}/clientes`;
 
   constructor(
     private httpClient: HttpClient,

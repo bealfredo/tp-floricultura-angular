@@ -2,12 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Cidade } from '../models/cidade.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CidadeService {
-  private baseUrl = 'http://localhost:8080/cidades';
+  private baseUrl = `${environment.apiUrl}/cidades`;
 
   constructor(private httpClient: HttpClient) {  }
 

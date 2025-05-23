@@ -10,6 +10,7 @@ import { UsuarioTiposPerfilByEmailResponse } from '../models/usuarioTiposPerfilB
 import { EmailAvailable } from '../models/emailAvailableResponse.model';
 import { EmailTakenCliente } from '../models/emailTakenClienteResponse.model';
 import { CarrinhoService } from './carrinho.service';
+import { environment } from '../../environments/environment';
 
 export type UsuarioLogado = Admin | Cliente | Entregador;
 
@@ -18,7 +19,7 @@ export type UsuarioLogado = Admin | Cliente | Entregador;
 })
 export class AuthService {
 
-  private baseURL: string = 'http://localhost:8080/auth';
+  private baseURL: string = `${environment.apiUrl}/auth`;
   private tokenKey : keyLocalStorage = 'jwt_token';
   private usuarioLogadoKey : keyLocalStorage = 'usuario_logado';
   private usuarioLogadoSubject = new BehaviorSubject<UsuarioLogado | null>(null);
